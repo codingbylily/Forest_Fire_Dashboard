@@ -1,1 +1,1 @@
-# Forest_Fire_Dashboard
+# Forest Fire Dashboard
