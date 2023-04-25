@@ -9,9 +9,6 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 
 import streamlit as st 
 
-## Run this demo locally
-pip install --upgrade streamlit
-streamlit run https://github.com/codingbylily/Forest_Fire_Dashboard/blob/4baa515c5dbbc38adec6155644964c40da65860d/forest%20fire%20dashboard%20script.py
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
 st.set_page_config(layout="wide", page_title="Forest Fire Dashboard", page_icon=":fire:")
