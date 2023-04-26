@@ -32,8 +32,7 @@ st.header('About the data behind the model')
 data
 
 #drawing a line chart for FFMC and temperature comparison within personal data
-chart_data = data['temp','FMCC']
-
+chart_data = data['temp','FFMC']
 st.line_chart(chart_data)
 
 # data.head()
