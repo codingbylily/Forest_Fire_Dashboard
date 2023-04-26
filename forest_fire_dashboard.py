@@ -67,7 +67,7 @@ y_predict = clf.predict(X_test)
 
 accuracy_score(y_test,y_predict)
 
-plt.style.use('seaborn-whitegrid')
+#plt.style.use('seaborn-whitegrid')
 
 data.hist(bins=20, figsize=(14,10), color='#5D3FD3')
 #plt.show()
