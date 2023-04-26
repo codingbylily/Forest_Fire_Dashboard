@@ -25,6 +25,10 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 #import our dataset and print the first 5 rows
 data = pd.read_csv('forestfires.csv')
 
+# #testing streamlit
+st.title('Forest Fire AI Prediction Dashboard')
+
+st.header('About the data behind the model')
 data
 
 # data.head()
@@ -86,5 +90,4 @@ data
 # print(result)
 
 
-# #testing streamlit
-st.write('hello world')
+
