@@ -23,7 +23,7 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
         print(os.path.join(dirname, filename))
         
 #import our dataset and print the first 5 rows
-data = pd.read_csv('/kaggle/input/forest-fires-data-set/forestfires.csv')
+data = pd.read_csv('forestfires.csv')
 data.head()
 
 #explore last 5 rows
