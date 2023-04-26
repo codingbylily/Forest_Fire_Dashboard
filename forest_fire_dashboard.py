@@ -31,6 +31,12 @@ st.title('Forest Fire AI Prediction Dashboard')
 st.header('About the data behind the model')
 data
 
+#drawing a line chart for FFMC and temperature comparison within personal data
+FFMC = data['FFMC']
+temp = data['temp']
+
+st.line_chart(temp,FMCC)
+
 # data.head()
 
 # #explore last 5 rows
