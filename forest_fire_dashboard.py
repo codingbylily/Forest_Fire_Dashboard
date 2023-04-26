@@ -1,6 +1,6 @@
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
-import matplotlib as plt
+#import matplotlib as plt
 import sklearn
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
@@ -34,19 +34,13 @@ data['log_area'] = np.log10(data['area']+1)
 data.head()
 data.describe()
 
-plt.pyplot.scatter(data['X'], data['Y'],s = 20, c=data['log_area'], cmap='spring')
-
-plt.pyplot.scatter(data['rain'],data['log_area'])
-
-plt.pyplot.scatter(data['temp'],data['log_area'])
-
-plt.pyplot.scatter(data['FFMC'],data['log_area'])
-
-plt.pyplot.scatter(data['DMC'],data['log_area'])
-
-plt.pyplot.scatter(data['wind'],data['log_area'])
-
-plt.pyplot.scatter(data['ISI'],data['log_area'])
+#plt.pyplot.scatter(data['X'], data['Y'],s = 20, c=data['log_area'], cmap='spring')
+#plt.pyplot.scatter(data['rain'],data['log_area'])
+#plt.pyplot.scatter(data['temp'],data['log_area'])
+#plt.pyplot.scatter(data['FFMC'],data['log_area'])
+#plt.pyplot.scatter(data['DMC'],data['log_area'])
+#plt.pyplot.scatter(data['wind'],data['log_area'])
+#plt.pyplot.scatter(data['ISI'],data['log_area'])
 
 def sev_val(row):
     #Creates new column to indicate samples of interest
@@ -86,3 +80,7 @@ joblib.dump(clf,filename)
 loaded_model = joblib.load(filename)
 result = loaded_model.score(X_test, y_test)
 print(result)
+
+
+#testing streamlit
+st.write('hello world')
