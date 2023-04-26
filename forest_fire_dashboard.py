@@ -35,7 +35,7 @@ data
 FFMC = data['FFMC']
 temp = data['temp']
 
-st.line_chart(temp,FMCC)
+st.line_chart(data = [temp,FMCC])
 
 # data.head()
 
