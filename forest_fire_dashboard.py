@@ -36,8 +36,9 @@ chart_data = data[['temp','FFMC']]
 st.line_chart(chart_data)
 
 
-scatterplot
-st.plotly_chart(chart_data)
+#scatterplot
+fig = px.scatter(chart_data, x="temp", y="FFMC") 
+st.plotly_chart(fig)
 
 # data.head()
 
