@@ -6,7 +6,7 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-import plotly
+import plotly.express as px
 
 import streamlit as st 
 
@@ -36,8 +36,8 @@ chart_data = data[['temp','FFMC']]
 st.line_chart(chart_data)
 
 
-#scatterplot
-#st.plotly_chart(chart_data)
+scatterplot
+st.plotly_chart(chart_data)
 
 # data.head()
 
