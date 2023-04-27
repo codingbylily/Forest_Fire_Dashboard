@@ -37,7 +37,7 @@ st.line_chart(chart_data)
 
 
 #scatterplot
-st.plotly_chart(chart_data)
+#st.plotly_chart(chart_data)
 
 # data.head()
 
