@@ -40,6 +40,8 @@ st.line_chart(chart_data)
 fig = px.scatter(chart_data, x="temp", y="FFMC") 
 st.plotly_chart(fig)
 
+st.map(data=None, zoom=None, use_container_width=True)
+
 # data.head()
 
 # #explore last 5 rows
