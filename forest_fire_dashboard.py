@@ -40,6 +40,7 @@ meteorological_data
 #plotting meteorological stations onto map of Portugal
 meteorological_station = pd.read_csv('Portuguese meteorological stations.csv', usecols=['Name','Latitude (decimal degrees)', 'Longitude (decimal degrees)'])
 meteorological_station.columns = ['Meteorological Station Name', 'latitude','longitude']
+st.header('Portuguese Meteorological Stations Locations')
 st.map(meteorological_station, zoom=3, use_container_width=True)
 
 
