@@ -37,10 +37,10 @@ meteorological_data = pd.read_csv('Portuguese meteorological stations.csv')
 st.header('Portuguese meteorological stations data')
 meteorological_data
 
-#plotting mmeteorological stations onto map of Portugal
-df.pd.read_csv('Portuguese meteorological stations.csv', usecols=['Name','Latitude (decimal degrees)', 'Longitude (decimal degrees)'])
-df.columns = ['Meteorological Station Name', 'latitude','longitude']
-st.map(df)
+#plotting meteorological stations onto map of Portugal
+meteorological_station = pd.read_csv('Portuguese meteorological stations.csv', usecols=['Name','Latitude (decimal degrees)', 'Longitude (decimal degrees)'])
+meteorological_station.columns = ['Meteorological Station Name', 'latitude','longitude']
+st.map(meteorological_station)
 
 
 #drawing a line chart for FFMC and temperature comparison within personal data
