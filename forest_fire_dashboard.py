@@ -22,14 +22,20 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
     for filename in filenames:
         print(os.path.join(dirname, filename))
         
-#import our dataset and print the first 5 rows
+#import our dataset
 data = pd.read_csv('forestfires.csv')
 
-# #testing streamlit
+#creating title
 st.title('Forest Fire AI Prediction Dashboard')
 
+#header for forestfires dataset
 st.header('About the data behind the model')
 data
+
+#import meteorological stations dataset
+meteorological_data = pd.read_csv('Portuguese meteorological stations.csv')
+st.header('Portuguese meteorological stations')
+meteorological_data
 
 #drawing a line chart for FFMC and temperature comparison within personal data
 chart_data = data[['temp','FFMC']]
