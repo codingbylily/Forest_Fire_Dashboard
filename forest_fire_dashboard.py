@@ -7,6 +7,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import plotly.express as px
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 import streamlit as st 
 
@@ -34,6 +36,11 @@ meteorological_station.columns = ['Meteorological Station Name', 'latitude','lon
 st.subheader('Portuguese Meteorological Stations Locations')
 st.map(meteorological_station, zoom=3, use_container_width=True)
 st.caption('We will be using data from meteorological stations rather than satilite or sensor data. Meteorological stations were found to have the least amount of delay in data when compared to satilite or sensor data. Preventing delayed information will lead to faster response times in case of forest fires.')
+
+#heatmap
+fig, ax = plt.subplots()
+sns.heatmap(df_col.corr(), ax=ax)
+st.write(fig)
 
 #header for forestfires dataset
 st.subheader('About the data behind the model')
