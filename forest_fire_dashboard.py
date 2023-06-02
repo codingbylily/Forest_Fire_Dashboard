@@ -35,7 +35,7 @@ meteorological_station = pd.read_csv('Portuguese meteorological stations.csv', u
 meteorological_station.columns = ['Meteorological Station Name', 'latitude','longitude']
 st.subheader('Portuguese Meteorological Stations Locations')
 st.map(meteorological_station, zoom=3, use_container_width=True)
-st.caption('We will be using data from meteorological stations rather than satilite or sensor data. Meteorological stations were found to have the least amount of delay in data when compared to satilite or sensor data. Preventing delayed information will lead to faster response times in case of forest fires.')
+st.caption('We will be using data from meteorological stations rather than satellite or sensor data. Meteorological stations were found to have the least amount of delay in data when compared to satellite or sensor data. Preventing delayed information will lead to faster response times to forest fire evacuation.')
 
 #heatmap
 #fig, ax = plt.subplots()
