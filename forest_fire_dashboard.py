@@ -39,7 +39,7 @@ meteorological_data
 
 #plotting mmeteorological stations onto map of Portugal
 df.pd.read_csv('Portuguese meteorological stations.csv', usecols=['Name','Latitude (decimal degrees)', 'Longitude (decimal degrees)'])
-df.columns = ['Meteorological Station Name', 'latitude, 'longitude']
+df.columns = ['Meteorological Station Name', 'latitude','longitude']
 st.map(df)
 
 
