@@ -28,20 +28,21 @@ data = pd.read_csv('forestfires.csv')
 #creating title
 st.title('Forest Fire AI Prediction Dashboard')
 
+#plotting meteorological stations onto map of Portugal
+meteorological_station = pd.read_csv('Portuguese meteorological stations.csv', usecols=['Name','Latitude (decimal degrees)', 'Longitude (decimal degrees)'])
+meteorological_station.columns = ['Meteorological Station Name', 'latitude','longitude']
+st.subheader('Portuguese Meteorological Stations Locations')
+st.map(meteorological_station, zoom=3, use_container_width=True)
+st.caption('We will be using data from meteorological stations rather than satilite or sensor data. Meteorological stations were found to have the least amount of delay in data when compared to satilite or sensor data.')
+
 #header for forestfires dataset
-st.header('About the data behind the model')
+st.subheader('About the data behind the model')
 data
 
 #import meteorological stations dataset
 meteorological_data = pd.read_csv('Portuguese meteorological stations.csv')
-st.header('Portuguese meteorological stations data')
+st.subheader('Portuguese meteorological stations data')
 meteorological_data
-
-#plotting meteorological stations onto map of Portugal
-meteorological_station = pd.read_csv('Portuguese meteorological stations.csv', usecols=['Name','Latitude (decimal degrees)', 'Longitude (decimal degrees)'])
-meteorological_station.columns = ['Meteorological Station Name', 'latitude','longitude']
-st.header('Portuguese Meteorological Stations Locations')
-st.map(meteorological_station, zoom=3, use_container_width=True)
 
 
 #drawing a line chart for FFMC and temperature comparison within personal data
