@@ -34,8 +34,14 @@ data
 
 #import meteorological stations dataset
 meteorological_data = pd.read_csv('Portuguese meteorological stations.csv')
-st.header('Portuguese meteorological stations')
+st.header('Portuguese meteorological stations data')
 meteorological_data
+
+#plotting mmeteorological stations onto map of Portugal
+df.pd.read_csv('Portuguese meteorological stations.csv', usecols=['Name','Latitude (decimal degrees)', 'Longitude (decimal degrees)'])
+df.columns = ['Meteorological Station Name', 'latitude, 'longitude']
+st.map(df)
+
 
 #drawing a line chart for FFMC and temperature comparison within personal data
 chart_data = data[['temp','FFMC']]
@@ -46,7 +52,7 @@ st.line_chart(chart_data)
 fig = px.scatter(chart_data, x="temp", y="FFMC") 
 st.plotly_chart(fig)
 
-st.map(data=None, zoom=None, use_container_width=True)
+#st.map(data=None, zoom=None, use_container_width=True)
 
 # data.head()
 
