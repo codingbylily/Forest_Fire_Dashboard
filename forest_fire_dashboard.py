@@ -2,13 +2,14 @@ import sklearn
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 #import matplotlib as plt
-#import sklearn
+
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
+import pickle
 
 import streamlit as st 
 
@@ -37,10 +38,6 @@ st.subheader('Portuguese Meteorological Stations Locations')
 st.map(meteorological_station, zoom=3, use_container_width=True)
 st.caption(':red[We will be using data from meteorological stations rather than satellite or sensor data to train out machine learning model. Meteorological stations were found to have the least amount of delay in data when compared to satellite or sensor data. Preventing delayed information will lead to faster response times for forest fire evacuation.]')
 
-#heatmap
-#fig, ax = plt.subplots()
-#sns.heatmap(df_col.corr(), ax=ax)
-#st.write(fig)
 
 #header for forestfires dataset
 st.subheader('About the data behind the model')
@@ -61,7 +58,6 @@ st.line_chart(chart_data)
 fig = px.scatter(chart_data, x="temp", y="FFMC") 
 st.plotly_chart(fig)
 
-#st.map(data=None, zoom=None, use_container_width=True)
 
 # data.head()
 
@@ -74,7 +70,7 @@ st.plotly_chart(fig)
 # data.head()
 # data.describe()
 
-# #plt.pyplot.scatter(data['X'], data['Y'],s = 20, c=data['log_area'], cmap='spring')
+plt.pyplot.scatter(data['X'], data['Y'],s = 20, c=data['log_area'], cmap='spring')
 # #plt.pyplot.scatter(data['rain'],data['log_area'])
 # #plt.pyplot.scatter(data['temp'],data['log_area'])
 # #plt.pyplot.scatter(data['FFMC'],data['log_area'])
