@@ -1,7 +1,7 @@
 import sklearn
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
-#import matplotlib as plt
+import matplotlib as plt
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
-import pickle
+#import pickle
 
 import streamlit as st 
 
@@ -70,7 +70,7 @@ st.plotly_chart(fig)
 # data.head()
 # data.describe()
 
-plt.pyplot.scatter(data['X'], data['Y'],s = 20, c=data['log_area'], cmap='spring')
+#plt.pyplot.scatter(data['X'], data['Y'],s = 20, c=data['log_area'], cmap='spring')
 # #plt.pyplot.scatter(data['rain'],data['log_area'])
 # #plt.pyplot.scatter(data['temp'],data['log_area'])
 # #plt.pyplot.scatter(data['FFMC'],data['log_area'])
@@ -90,32 +90,32 @@ plt.pyplot.scatter(data['X'], data['Y'],s = 20, c=data['log_area'], cmap='spring
     
 # data['sev_index'] = data.apply(sev_val, axis=1)
 
-# x = data[['ISI','FFMC','wind','temp','rain']]
-# y = data[['sev_index']]
+x = data[['ISI','FFMC','wind','temp','rain']]
+y = data[['sev_index']]
 
-# X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state=42)
 
-# clf = RandomForestClassifier(max_depth=2,random_state=0)
+clf = RandomForestClassifier(max_depth=2,random_state=0)
 
-# clf.fit(X_train, y_train.values.ravel())
+clf.fit(X_train, y_train.values.ravel())
 
-# y_predict = clf.predict(X_test)
+y_predict = clf.predict(X_test)
 
-# accuracy_score(y_test,y_predict)
+accuracy_score(y_test,y_predict)
 
-# #plt.style.use('seaborn-whitegrid')
+plt.style.use('seaborn-whitegrid')
 
-# data.hist(bins=20, figsize=(14,10), color='#5D3FD3')
-# #plt.show()
+data.hist(bins=20, figsize=(14,10), color='#5D3FD3')
+plt.show()
 
-# #saving the model to disk?
-# filename = 'finalized_model_clf.sav'
-# joblib.dump(clf,filename)
+#saving the model to disk?
+filename = 'finalized_model_clf.sav'
+joblib.dump(clf,filename)
 
 # #loading the model from disk
-# loaded_model = joblib.load(filename)
-# result = loaded_model.score(X_test, y_test)
-# print(result)
+loaded_model = joblib.load(filename)
+result = loaded_model.score(X_test, y_test)
+print(result)
 
 
 
