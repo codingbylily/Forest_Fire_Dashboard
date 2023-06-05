@@ -35,7 +35,7 @@ st.title('Forest Fire AI Prediction Dashboard')
 meteorological_station = pd.read_csv('Portuguese meteorological stations.csv', usecols=['Name','Latitude (decimal degrees)', 'Longitude (decimal degrees)'])
 meteorological_station.columns = ['Meteorological Station Name', 'latitude','longitude']
 st.subheader('Portuguese Meteorological Stations Locations')
-st.map(meteorological_station, zoom=3, use_container_width=True)
+st.map(meteorological_station, zoom=7, use_container_width=True)
 st.caption(':red[We will be using data from meteorological stations rather than satellite or sensor data to train out machine learning model. Meteorological stations were found to have the least amount of delay in data when compared to satellite or sensor data. Preventing delayed information will lead to faster response times for forest fire evacuation.]')
 
 #import meteorological stations dataset
@@ -99,6 +99,10 @@ st.plotly_chart(fig)
 
 with open("model.pkl", "rb") as f:
     model = pickle.load(f)
+
+
+
+Temp = st.sidebar.slider('Monthly Charges', 18.0,118.0, 18.0)
 
 # y_predict = clf.predict(X_test)
 
