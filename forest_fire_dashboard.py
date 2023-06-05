@@ -40,7 +40,7 @@ meteorological_station = pd.read_csv('Portuguese meteorological stations.csv', u
 meteorological_station.columns = ['Meteorological Station Name', 'latitude','longitude']
 st.subheader('Portuguese Meteorological Stations Locations')
 st.map(meteorological_station, zoom=7, use_container_width=True)
-st.caption(':red[We will be using data from meteorological stations rather than satellite or sensor data to train out machine learning model. Meteorological stations were found to have the least amount of delay in data when compared to satellite or sensor data. Preventing delayed information will lead to faster response times for forest fire evacuation.]')
+st.caption(':blue[We will be using data from meteorological stations rather than satellite or sensor data to train out machine learning model. Meteorological stations were found to have the least amount of delay in data when compared to satellite or sensor data. Preventing delayed information will lead to faster response times for forest fire evacuation.]')
 
 #import meteorological stations dataset
 meteorological_data = pd.read_csv('Portuguese meteorological stations.csv')
@@ -50,17 +50,18 @@ meteorological_data
 #header for forestfires dataset
 st.subheader('About the data behind the model')
 data
-st.caption(':red[Data gathered from meteorological stations location in Montesinho park.]')
+st.caption(':blue[Data gathered from meteorological stations location in Montesinho park.]')
+
 
 # drawing a line chart for FFMC and temperature comparison within personal data
-chart_data = data[['temp','FFMC']]
-st.line_chart(chart_data)
+#chart_data = data[['temp','FFMC']]
+#st.line_chart(chart_data)
 # data.head()
 
 
 #scatterplot
-fig = px.scatter(chart_data, x="temp", y="FFMC")
-st.plotly_chart(fig)
+#fig = px.scatter(chart_data, x="temp", y="FFMC")
+#st.plotly_chart(fig)
 
 
 
