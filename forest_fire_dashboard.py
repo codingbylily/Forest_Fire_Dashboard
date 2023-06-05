@@ -98,7 +98,7 @@ clf = RandomForestClassifier(max_depth=2,random_state=0)
 clf.fit(X_train, y_train.values.ravel())
 
 with open("model.pkl", "wb") as f:
-    pickle.dump(model, f)
+    pickle.dump(clf, f)
 
 # y_predict = clf.predict(X_test)
 
