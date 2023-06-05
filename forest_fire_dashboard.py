@@ -35,6 +35,8 @@ st.subheader( 'Another app brought to you by Lily from [CodingByLily](https://co
 #creating title
 st.title('Forest Fire AI Prediction Dashboard')
 
+st.write('Use the sidebar to input values from around your area of choice to see if there is a possibility of a forest fire occurring. Results will be displayed below.)
+
 #plotting meteorological stations onto map of Portugal
 meteorological_station = pd.read_csv('Portuguese meteorological stations.csv', usecols=['Name','Latitude (decimal degrees)', 'Longitude (decimal degrees)'])
 meteorological_station.columns = ['Meteorological Station Name', 'latitude','longitude']
