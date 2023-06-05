@@ -76,29 +76,29 @@ st.plotly_chart(fig)
 # #plt.pyplot.scatter(data['wind'],data['log_area'])
 # #plt.pyplot.scatter(data['ISI'],data['log_area'])
 
-def sev_val(row):
-    #Creates new column to indicate samples of interest
-    #We want the
-    if row['area'] <2:
-        val = 1
-    else:
-        val = 0
-    return(val)
+# def sev_val(row):
+#     #Creates new column to indicate samples of interest
+#     #We want the
+#     if row['area'] <2:
+#         val = 1
+#     else:
+#         val = 0
+#     return(val)
     
     
-data['sev_index'] = data.apply(sev_val, axis=1)
+# data['sev_index'] = data.apply(sev_val, axis=1)
 
-x = data[['ISI','FFMC','wind','temp','rain']]
-y = data[['sev_index']]
+# x = data[['ISI','FFMC','wind','temp','rain']]
+# y = data[['sev_index']]
 
-X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state=42)
+# X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state=42)
 
-clf = RandomForestClassifier(max_depth=2,random_state=0)
+# clf = RandomForestClassifier(max_depth=2,random_state=0)
 
-clf.fit(X_train, y_train.values.ravel())
+# clf.fit(X_train, y_train.values.ravel())
 
-with open("model.pkl", "wb") as f:
-    pickle.dump(clf, f)
+with open("model.pkl", "rb") as f:
+    model = pickle.load(f)
 
 # y_predict = clf.predict(X_test)
 
@@ -106,8 +106,8 @@ with open("model.pkl", "wb") as f:
 
 # plt.style.use('seaborn-whitegrid')
 
-data.hist(bins=20, figsize=(14,10), color='#5D3FD3')
-plt.show()
+# data.hist(bins=20, figsize=(14,10), color='#5D3FD3')
+# plt.show()
 
 #saving the model to disk?
 #filename = 'finalized_model_clf.sav'
