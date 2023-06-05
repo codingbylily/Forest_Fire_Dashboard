@@ -29,7 +29,7 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 data = pd.read_csv('forestfires.csv')
 
 #link it to personal website
-st.subheader( ':blue[Another app brought to you by Lily from [CodingByLily](https://codingbylily.com/)]')
+st.subheader( 'Another app brought to you by Lily from [CodingByLily](https://codingbylily.com/)')
 
 
 #creating title
@@ -50,7 +50,7 @@ meteorological_data
 #header for forestfires dataset
 st.subheader('Data collected from meteorological stations')
 data
-st.caption(':blue[Data gathered from meteorological stations location in Montesinho park was used to predict the possibility of a forest fire occuring.]')
+st.write('Data gathered from meteorological stations location in Montesinho park was used to predict the possibility of a forest fire occuring.')
 
 
 # drawing a line chart for FFMC and temperature comparison within personal data
