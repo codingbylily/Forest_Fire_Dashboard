@@ -76,14 +76,14 @@ st.plotly_chart(fig)
 # #plt.pyplot.scatter(data['wind'],data['log_area'])
 # #plt.pyplot.scatter(data['ISI'],data['log_area'])
 
-# def sev_val(row):
-#     #Creates new column to indicate samples of interest
-#     #We want the
-#     if row['area'] <2:
-#         val = 1
-#     else:
-#         val = 0
-#     return(val)
+def sev_val(row):
+    #Creates new column to indicate samples of interest
+    #We want the
+    if row['area'] <2:
+        val = 1
+    else:
+        val = 0
+    return(val)
     
     
 data['sev_index'] = data.apply(sev_val, axis=1)
