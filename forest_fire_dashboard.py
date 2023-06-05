@@ -37,7 +37,7 @@ st.subheader( 'Another app brought to you by Lily from [CodingByLily](https://co
 
 
 
-st.write('Use the sidebar to input values from around your area of choice to see if there is a possibility of a forest fire occurring. Results will be displayed below:')
+st.write('Input varibiables from your area of choice to see if there is a possibility of a forest fire occurring. Results will be displayed below:')
 
 
 with open("model.pkl", "rb") as f:
