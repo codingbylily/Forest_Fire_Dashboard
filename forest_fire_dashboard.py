@@ -9,9 +9,9 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
-#import pickle
+import pickle
 
-import streamlit as st 
+import streamlit as st
 
 
 # SETTING PAGE CONFIG TO WIDE MODE AND ADDING A TITLE AND FAVICON
@@ -55,7 +55,7 @@ st.line_chart(chart_data)
 
 
 #scatterplot
-fig = px.scatter(chart_data, x="temp", y="FFMC") 
+fig = px.scatter(chart_data, x="temp", y="FFMC")
 st.plotly_chart(fig)
 
 
@@ -78,7 +78,7 @@ st.plotly_chart(fig)
 
 # def sev_val(row):
 #     #Creates new column to indicate samples of interest
-#     #We want the 
+#     #We want the
 #     if row['area'] <2:
 #         val = 1
 #     else:
@@ -88,20 +88,23 @@ st.plotly_chart(fig)
     
 # data['sev_index'] = data.apply(sev_val, axis=1)
 
-#x = data[['ISI','FFMC','wind','temp','rain']]
-#y = data[['sev_index']]
+x = data[['ISI','FFMC','wind','temp','rain']]
+y = data[['sev_index']]
 
-#X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state=42)
 
-#clf = RandomForestClassifier(max_depth=2,random_state=0)
+clf = RandomForestClassifier(max_depth=2,random_state=0)
 
-#clf.fit(X_train, y_train.values.ravel())
+clf.fit(X_train, y_train.values.ravel())
 
-#y_predict = clf.predict(X_test)
+with open("model.pkl", "wb") as f:
+    pickle.dump(model, f)
 
-#accuracy_score(y_test,y_predict)
+# y_predict = clf.predict(X_test)
 
-#plt.style.use('seaborn-whitegrid')
+# accuracy_score(y_test,y_predict)
+
+# plt.style.use('seaborn-whitegrid')
 
 data.hist(bins=20, figsize=(14,10), color='#5D3FD3')
 plt.show()
