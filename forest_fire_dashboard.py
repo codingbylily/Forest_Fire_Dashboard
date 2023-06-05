@@ -73,11 +73,11 @@ temp = st.sidebar.slider('Temperature (Celsius degrees)', min_value=2,max_value=
 
 ISI = st.sidebar.slider('Initial Spread Index (ISI)', min_value=0,max_value=56,value=20)
 
-wind = st.sidebar.slider('Wind Speed (km/hr)', min_value=0.40,max_value=9.40,value=3)
+wind = st.sidebar.slider('Wind Speed (km/hr)', min_value=1,max_value=9,value=3)
 
-rain = st.sidebar.slider('Outside Rain(mm/m^2)', min_value=0.0,max_value=6.4,value=5.2)
+rain = st.sidebar.slider('Outside Rain(mm/m^2)', min_value=0,max_value=6,value=5)
 
-FFMC = st.sidebar.slider('Fine Fuel Moisture Code (FFMC)', min_value=18.7,max_value=96.20,value=23)
+FFMC = st.sidebar.slider('Fine Fuel Moisture Code (FFMC)', min_value=19,max_value=96,value=23)
 
 # #explore last 5 rows
 # data.tail()
