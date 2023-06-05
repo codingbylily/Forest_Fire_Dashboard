@@ -28,6 +28,10 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 #import our dataset
 data = pd.read_csv('forestfires.csv')
 
+#link it to personal website
+st.header( 'Another app brought to you by Lily from CodingByLily[https://codingbylily.com/]')
+
+
 #creating title
 st.title('Forest Fire AI Prediction Dashboard')
 
@@ -57,6 +61,16 @@ st.line_chart(chart_data)
 #scatterplot
 fig = px.scatter(chart_data, x="temp", y="FFMC")
 st.plotly_chart(fig)
+
+
+
+with open("model.pkl", "rb") as f:
+    model = pickle.load(f)
+
+
+
+temp = st.sidebar.slider('Temperature', 18.0,118.0, 18.0)
+
 
 
 # #explore last 5 rows
@@ -97,12 +111,6 @@ st.plotly_chart(fig)
 
 # clf.fit(X_train, y_train.values.ravel())
 
-with open("model.pkl", "rb") as f:
-    model = pickle.load(f)
-
-
-
-Temp = st.sidebar.slider('Monthly Charges', 18.0,118.0, 18.0)
 
 # y_predict = clf.predict(X_test)
 
