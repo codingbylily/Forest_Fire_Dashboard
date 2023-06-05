@@ -66,6 +66,10 @@ if output_prediction == 1:
     st.header(':red[Severe forest fire predicted]')
 if output_prediction == 0:
     st.header(':green[Severe forest NOT fire predicted]')
+    
+st.divider()
+
+
 
 #plotting meteorological stations onto map of Portugal
 meteorological_station = pd.read_csv('Portuguese meteorological stations.csv', usecols=['Name','Latitude (decimal degrees)', 'Longitude (decimal degrees)'])
