@@ -48,14 +48,16 @@ st.subheader('About the data behind the model')
 data
 st.caption(':red[Data gathered from meteorological stations location in Montesinho park.]')
 
+drawing a line chart for FFMC and temperature comparison within personal data
+chart_data = data[['temp','FFMC']]
+st.line_chart(chart_data)
+# data.head()
+
+
 #scatterplot
 fig = px.scatter(chart_data, x="temp", y="FFMC") 
 st.plotly_chart(fig)
 
-#drawing a line chart for FFMC and temperature comparison within personal data
-#chart_data = data[['temp','FFMC']]
-#st.line_chart(chart_data)
-# data.head()
 
 # #explore last 5 rows
 # data.tail()
