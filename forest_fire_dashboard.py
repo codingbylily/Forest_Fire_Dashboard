@@ -29,7 +29,7 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 data = pd.read_csv('forestfires.csv')
 
 #link it to personal website
-st.subheader( 'Another app brought to you by Lily from [CodingByLily](https://codingbylily.com/)')
+st.subheader( ':blue[Another app brought to you by Lily from [CodingByLily](https://codingbylily.com/)]')
 
 
 #creating title
@@ -38,17 +38,17 @@ st.title('Forest Fire AI Prediction Dashboard')
 #plotting meteorological stations onto map of Portugal
 meteorological_station = pd.read_csv('Portuguese meteorological stations.csv', usecols=['Name','Latitude (decimal degrees)', 'Longitude (decimal degrees)'])
 meteorological_station.columns = ['Meteorological Station Name', 'latitude','longitude']
-st.subheader('Portuguese Meteorological Stations Locations')
+st.subheader('Mapped Locations of Meteorological Stations in Portugal')
 st.map(meteorological_station, zoom=7, use_container_width=True)
-st.caption(':blue[Data from meteorological stations was used to train the machine learning model rather than satellite imaging and sensors such as fire alarms. Meteorological stations were found to have the least amount of delay in data when compared to satellites and sensors. Preventing delayed information will lead to faster response times for forest fire evacuation.]')
+st.write('Data from meteorological stations was used to train the machine learning model rather than satellite imaging and sensors such as fire alarms. Meteorological stations were found to have the least amount of delay in data when compared to satellites and sensors. Preventing delayed information will lead to faster response times for forest fire evacuation.')
 
 #import meteorological stations dataset
 meteorological_data = pd.read_csv('Portuguese meteorological stations.csv')
-st.subheader('Locations of meteorological stations in Portugal')
+st.subheader('Portuguese meteorological station data')
 meteorological_data
 
 #header for forestfires dataset
-st.subheader('About the data behind the model')
+st.subheader('Data collected from meteorological stations')
 data
 st.caption(':blue[Data gathered from meteorological stations location in Montesinho park was used to predict the possibility of a forest fire occuring.]')
 
