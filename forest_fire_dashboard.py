@@ -80,11 +80,11 @@ rain = st.sidebar.slider('Outside Rain(mm/m^2)', min_value=0,max_value=6,value=5
 FFMC = st.sidebar.slider('Fine Fuel Moisture Code (FFMC)', min_value=19,max_value=96,value=23)
 
 
-input_data = [temp,ISI,wind,rain,FFMC]
-in_df = pd.DataFrame(data=input_data)
+# input_data = [temp,ISI,wind,rain,FFMC]
+# in_df = pd.DataFrame(data=input_data)
 
 
-output_prediction = model.predict(in_df)
+output_prediction = model.predict(temp,ISI,wind,rain,FFMC)
 st.write(output_prediction)
 
 
