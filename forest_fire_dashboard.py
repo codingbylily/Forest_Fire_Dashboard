@@ -28,14 +28,16 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 #import our dataset
 data = pd.read_csv('forestfires.csv')
 
+#creating title
+st.title('Forest Fire AI Prediction Dashboard')
+
 #link it to personal website
 st.subheader( 'Another app brought to you by Lily from [CodingByLily](https://codingbylily.com/)')
 
 
-#creating title
-st.title('Forest Fire AI Prediction Dashboard')
 
-st.write('Use the sidebar to input values from around your area of choice to see if there is a possibility of a forest fire occurring. Results will be displayed below.')
+
+st.write('Use the sidebar to input values from around your area of choice to see if there is a possibility of a forest fire occurring. Results will be displayed below:')
 
 
 with open("model.pkl", "rb") as f:
@@ -43,6 +45,7 @@ with open("model.pkl", "rb") as f:
 
 
 #getting user inputs
+st.sidebar.[Input Variables]
 ISI = st.sidebar.slider('Initial Spread Index (ISI)', min_value=0,max_value=56,value=4)
 temp = st.sidebar.slider('Temperature (Celsius degrees)', min_value=2,max_value=33,value=4)
 wind = st.sidebar.slider('Wind Speed (km/hr)', min_value=1,max_value=9,value=4)
