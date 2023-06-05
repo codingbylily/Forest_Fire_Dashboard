@@ -40,17 +40,17 @@ meteorological_station = pd.read_csv('Portuguese meteorological stations.csv', u
 meteorological_station.columns = ['Meteorological Station Name', 'latitude','longitude']
 st.subheader('Portuguese Meteorological Stations Locations')
 st.map(meteorological_station, zoom=7, use_container_width=True)
-st.caption(':blue[We will be using data from meteorological stations rather than satellite or sensor data to train out machine learning model. Meteorological stations were found to have the least amount of delay in data when compared to satellite or sensor data. Preventing delayed information will lead to faster response times for forest fire evacuation.]')
+st.caption(':blue[Data from meteorological stations was used to train the machine learning model rather than satellite imaging and sensors such as fire alarms. Meteorological stations were found to have the least amount of delay in data when compared to satellites and sensors. Preventing delayed information will lead to faster response times for forest fire evacuation.]')
 
 #import meteorological stations dataset
 meteorological_data = pd.read_csv('Portuguese meteorological stations.csv')
-st.subheader('Portuguese meteorological stations data')
+st.subheader('Locations of Portuguese meteorological stations')
 meteorological_data
 
 #header for forestfires dataset
 st.subheader('About the data behind the model')
 data
-st.caption(':blue[Data gathered from meteorological stations location in Montesinho park.]')
+st.caption(':blue[Data gathered from meteorological stations location in Montesinho park was used to predict the possibility of a forest fire occuring.]')
 
 
 # drawing a line chart for FFMC and temperature comparison within personal data
