@@ -37,6 +37,36 @@ st.title('Forest Fire AI Prediction Dashboard')
 
 st.write('Use the sidebar to input values from around your area of choice to see if there is a possibility of a forest fire occurring. Results will be displayed below.')
 
+
+with open("model.pkl", "rb") as f:
+    model = pickle.load(f)
+
+
+#getting user inputs
+ISI = st.sidebar.slider('Initial Spread Index (ISI)', min_value=0,max_value=56,value=4)
+temp = st.sidebar.slider('Temperature (Celsius degrees)', min_value=2,max_value=33,value=4)
+wind = st.sidebar.slider('Wind Speed (km/hr)', min_value=1,max_value=9,value=4)
+rain = st.sidebar.slider('Outside Rain(mm/m^2)', min_value=0,max_value=6,value=0)
+FFMC = st.sidebar.slider('Fine Fuel Moisture Code (FFMC)', min_value=19,max_value=96,value=78)
+
+input_data = {'temp':[temp],
+
+            'ISI':[ISI],
+
+            'wind':[wind],
+
+            'rain':[rain],
+            'FFMC':[FFMC],
+}
+
+#Passing user inputs into the model
+output_prediction = model.predict([[ISI,FFMC,wind,temp,rain]])
+
+if output_prediction == 1:
+    st.header(':red[Severe forest fire predicted]')
+if output_prediction == 0:
+    st.header(':green[Severe forest NOT fire predicted]')
+
 #plotting meteorological stations onto map of Portugal
 meteorological_station = pd.read_csv('Portuguese meteorological stations.csv', usecols=['Name','Latitude (decimal degrees)', 'Longitude (decimal degrees)'])
 meteorological_station.columns = ['Meteorological Station Name', 'latitude','longitude']
@@ -67,40 +97,6 @@ st.write('Data gathered from meteorological stations location in Montesinho park
 
 
 
-with open("model.pkl", "rb") as f:
-    model = pickle.load(f)
-
-
-#getting user inputs
-ISI = st.sidebar.slider('Initial Spread Index (ISI)', min_value=0,max_value=56,value=4)
-temp = st.sidebar.slider('Temperature (Celsius degrees)', min_value=2,max_value=33,value=4)
-wind = st.sidebar.slider('Wind Speed (km/hr)', min_value=1,max_value=9,value=4)
-rain = st.sidebar.slider('Outside Rain(mm/m^2)', min_value=0,max_value=6,value=0)
-FFMC = st.sidebar.slider('Fine Fuel Moisture Code (FFMC)', min_value=19,max_value=96,value=78)
-
-input_data = {'temp':[temp],
-
-            'ISI':[ISI],
-
-            'wind':[wind],
-
-            'rain':[rain],
-            'FFMC':[FFMC],
-}
-
-
-
-# input_data = [temp,ISI,wind,rain,FFMC]
-# in_df = pd.DataFrame(data=input_data)
-
-
-output_prediction = model.predict([[ISI,FFMC,wind,temp,rain]])
-
-if output_prediction == 1:
-    st.header(':red[Severe forest fire predicted]')
-if output_prediction == 0:
-    st.write('Severe forest fire NOT predicted')
-st.write(output_prediction)
 
 
 
