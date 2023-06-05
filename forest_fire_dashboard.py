@@ -69,7 +69,7 @@ with open("model.pkl", "rb") as f:
 
 
 
-temp = st.sidebar.slider('Temperature', 2,33, 1)
+temp = st.sidebar.slider('Temperature', min_value=2,max_value=33,value=15)
 
 
 
