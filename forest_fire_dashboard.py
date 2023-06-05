@@ -46,7 +46,7 @@ meteorological_data
 #header for forestfires dataset
 st.subheader('About the data behind the model')
 data
-st.caption(':red[Data gathered from ]')
+st.caption(':red[Data gathered from meteorological stations location in Montesinho park.]')
 
 #scatterplot
 fig = px.scatter(chart_data, x="temp", y="FFMC") 
