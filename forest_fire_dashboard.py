@@ -44,7 +44,7 @@ st.caption(':blue[Data from meteorological stations was used to train the machin
 
 #import meteorological stations dataset
 meteorological_data = pd.read_csv('Portuguese meteorological stations.csv')
-st.subheader('Locations of Portuguese meteorological stations')
+st.subheader('Locations of meteorological stations in Portugal')
 meteorological_data
 
 #header for forestfires dataset
