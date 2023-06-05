@@ -29,7 +29,7 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 data = pd.read_csv('forestfires.csv')
 
 #link it to personal website
-st.subheader( 'Another app brought to you by Lily from [CodingByLily]https://codingbylily.com/')
+st.subheader( 'Another app brought to you by Lily from [CodingByLily](https://codingbylily.com/)')
 
 
 #creating title
@@ -69,7 +69,7 @@ with open("model.pkl", "rb") as f:
 
 
 
-temp = st.sidebar.slider('Temperature', 18.0,118.0, 18.0)
+temp = st.sidebar.slider('Temperature', 2,33, 1)
 
 
 
