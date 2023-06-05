@@ -81,10 +81,11 @@ FFMC = st.sidebar.slider('Fine Fuel Moisture Code (FFMC)', min_value=19,max_valu
 
 
 input_data = [temp,ISI,wind,rain,FFMC]
-df = pd.DataFrame(data=input_data)
+in_df = pd.DataFrame(data=input_data)
 
 
-
+output_prediction = model.predict(in_df)
+st.write(output_prediction)
 
 
 
