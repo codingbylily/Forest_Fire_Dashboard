@@ -97,7 +97,7 @@ input_data = {'temp':[temp],
 output_prediction = model.predict([[ISI,FFMC,wind,temp,rain]])
 
 if output_prediction == 1:
-    st.header(':red[Severe forest fire predicted'])
+    st.header(':red[Severe forest fire predicted]')
 if output_prediction == 0:
     st.write('Severe forest fire NOT predicted')
 st.write(output_prediction)
