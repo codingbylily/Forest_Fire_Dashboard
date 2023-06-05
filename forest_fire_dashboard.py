@@ -86,7 +86,7 @@ st.plotly_chart(fig)
 #     return(val)
     
     
-# data['sev_index'] = data.apply(sev_val, axis=1)
+data['sev_index'] = data.apply(sev_val, axis=1)
 
 x = data[['ISI','FFMC','wind','temp','rain']]
 y = data[['sev_index']]
